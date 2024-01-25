@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 
-const showErrorMessage = errMessage => {
+const showErrorMessage = errMessage =>
   toast.error(errMessage, {
     position: 'top-right',
     autoClose: 2000,
@@ -12,6 +12,5 @@ const showErrorMessage = errMessage => {
     theme: 'dark',
     transition: 'Zoom',
   });
-};
 
 export default showErrorMessage;

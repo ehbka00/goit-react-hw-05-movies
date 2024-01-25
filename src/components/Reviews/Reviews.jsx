@@ -10,7 +10,7 @@ const Reviews = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    const getMoviesReviews = async movieId => {
+    const getMoviesReviews = async () => {
       try {
         const response = await fetchMovieReviews(movieId);
 
@@ -24,8 +24,8 @@ const Reviews = () => {
         setRevies([]);
       }
     };
-    getMoviesReviews(movieId);
-  }, []);
+    getMoviesReviews();
+  }, [movieId]);
 
   return (
     <div>

@@ -9,8 +9,7 @@ const Movie = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState();
   const location = useLocation();
-
-  const backLinkHref = useRef(location.state?.pathname ?? '/');
+  const backLinkState = useRef(location.state ?? '/');
 
   useEffect(() => {
     const getMovieDetails = async () => {
@@ -27,11 +26,15 @@ const Movie = () => {
       }
     };
     getMovieDetails();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>
-      <BackLink to={backLinkHref.current + location.state?.search ?? ''} />
+      <BackLink
+        to={
+          backLinkState.current.pathname + (backLinkState.current.search ?? '')
+        }
+      />
       {movieDetails && <MovieMainDetails data={movieDetails} />}
     </div>
   );
