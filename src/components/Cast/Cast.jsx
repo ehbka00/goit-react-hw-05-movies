@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'services/api';
 import showErrorMessage from 'services/toast';
 import CastCard from 'components/CastCard';
-import { ReactComponent as PlaceHolder } from '../../images/placeHolder.svg';
 
 import css from './cast.module.css';
 

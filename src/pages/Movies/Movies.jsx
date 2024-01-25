@@ -1,9 +1,9 @@
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovies } from 'services/api';
+import showErrorMessage from 'services/toast';
 
 import css from './movies.module.css';
-import showErrorMessage from 'services/toast';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
